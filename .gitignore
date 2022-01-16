@@ -1,0 +1,10 @@
+node_modules
+.prettierrc.json
+.eslintrc.json
+*.DS_Store
+.vscode
+# api Key exposed
+build
+/src/APIKEY.ts
+*/src/APIKEY.ts
+/public/bundle.js*
