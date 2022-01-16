@@ -1,0 +1,3 @@
+ add .ts extension to the end of this file 
+const apikey: string = '[YOUR NASA API KEY HERE]';
+export {apikey};

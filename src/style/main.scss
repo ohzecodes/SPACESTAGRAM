@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Billabong";
+  src: url("./Billabong.ttf");
+}
+$titlefont: "billabong", "cursive";
+$borderRadius: 10px;
+$photowidth: 500px;
+$textsize: 23;
+$bgcolor: rgb(38, 38, 38);
+$fontfamily: Arial, Helvetica, sans-serif;
+
+@mixin marginpad {
+  margin: 0;
+  padding: 0;
+}
+.title {
+  color: lighten($color: lightcoral, $amount: 10) !important;
+}
+
+#loaded {
+  background-color: $bgcolor;
+  #head {
+    font-size: large;
+    position: sticky;
+    top: 0;
+    background-color: rgba(38, 38, 38, 0.75);
+    padding: 13 0;
+  }
+}
+h1 {
+  margin: 0;
+  font-family: $titlefont;
+  text-transform: capitalize;
+  text-align: center;
+}
+h4 {
+  font-family: $fontfamily;
+  margin-top: 0;
+  text-align: center;
+}
+
+body {
+  background-color: black;
+  @include marginpad();
+  #root {
+    @include marginpad();
+    font-family: $fontfamily;
+  }
+}
+
+@import "./photo";
