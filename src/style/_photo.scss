@@ -43,6 +43,7 @@
     }
     img {
       @include marginpad();
+      max-height: $photowidth;
       width: $photowidth;
       border-radius: $borderRadius;
       border-bottom-left-radius: 0;

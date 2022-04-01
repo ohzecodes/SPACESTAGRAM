@@ -3,6 +3,7 @@ node_modules
 .eslintrc.json
 *.DS_Store
 .vscode
+
 # api Key exposed
 build
 /src/APIKEY.ts
