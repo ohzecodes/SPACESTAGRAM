@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import {FavoriteIcon,FavoriteBorderOutlinedIcon} from '@mui/icons-material';
 import { red } from "@mui/material/colors";
-import Explain from "./explanation";
+import Explain from "./Explanation";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
