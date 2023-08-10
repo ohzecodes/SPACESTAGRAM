@@ -1,0 +1,75 @@
+#wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .photo {
+    background-color: $bgcolor;
+    margin: 20px;
+    min-height: 370px;
+    font-size: $textsize;
+    border: 1px solid $bgcolor;
+    border-radius: $borderRadius;
+    width: $photowidth;
+    margin-top: 20px;
+    .img-wrap {
+      height: 500px;
+      display: grid;
+      justify-content: center;
+      align-items: end;
+      background-color: $bgcolor;
+      align-items: center;
+      background-color: black;
+    }
+    a {
+      font-size: calc($textsize - 6);
+      font-family: $fontfamily;
+      text-decoration: none;
+      color: rgba(var(--f52, 142, 142, 142), 1);
+      cursor: pointer;
+    }
+    #nameof {
+      font-weight: bolder;
+    }
+    p {
+      text-align: center;
+      margin-top: 0;
+      padding: 10px;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      background-color: inherit;
+      text-align: left;
+      line-height: 2rem;
+    }
+    img {
+      @include marginpad();
+      max-height: $photowidth;
+      width: $photowidth;
+      border-radius: $borderRadius;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      background-color: black;
+    }
+    .caption-content {
+      background-color: lavender;
+    }
+    .date {
+      font-size: $textsize - 7;
+      text-align: center !important;
+    }
+    button {
+      @include marginpad();
+      border-radius: 100%;
+      background-color: inherit;
+      border: 0;
+      svg {
+        font-size: inherit;
+        text-align: center;
+      }
+      &:hover {
+        background-color: darken($color: lavender, $amount: 3);
+        opacity: 0.5;
+      }
+    }
+  }
+}
