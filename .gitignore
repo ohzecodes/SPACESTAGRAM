@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-
+**/*.hide 
 */.env
 # production
 /build

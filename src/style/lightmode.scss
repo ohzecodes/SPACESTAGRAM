@@ -1,0 +1,33 @@
+@media (prefers-color-scheme: light) {
+    $bgColor: rgb(240, 240, 240);
+    $bgTransparent: transparentize($bgColor, 0.25);
+    body {
+      background-color: white;
+    }
+    header {
+      background-color: $bgTransparent;
+      color: darken($color: lightcoral, $amount: 10);
+    }
+    #loaded {
+      background-color: $bgColor;
+      header {
+        background-color: $bgTransparent;
+      }
+    }
+    .yellowText {
+      color: blue;
+      svg{
+        color: blue;
+      }
+    }
+    #notYetLoaded {
+      background-color: $bgTransparent;
+    }
+    .filter{
+      border-color: black;
+      label input + span {
+        color: black
+      }
+    }
+
+  }

@@ -1,0 +1,31 @@
+.heartOn {
+    animation: HeartOn 3s;
+    animation-fill-mode: forwards;
+  }
+  .heartOff {
+    font-size: 140px;
+  
+    animation: HeartOff 5s;
+    // animation-fill-mode: forwards;
+  }
+  
+  @keyframes HeartOn {
+    0% {
+      font-size: 30px;
+      fill: transparent;
+    }
+    100% {
+      font-size: 140px;
+      fill: red;
+    }
+  }
+  @keyframes HeartOff {
+    0% {
+      font-size: 140px;
+      fill: red;
+    }
+    100% {
+      fill: transparent;
+      font-size: 30px;
+    }
+  }

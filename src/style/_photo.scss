@@ -4,25 +4,26 @@
   flex-wrap: wrap;
 
   .photo {
-    background-color: $bgcolor;
+    background-color: transparent;
     margin: 20px;
     min-height: 370px;
-    font-size: $textsize;
-    border: 1px solid $bgcolor;
-    border-radius: $borderRadius;
-    width: $photowidth;
+    font-size: $textSize;  
+  
+    width: $photoWidth;
     margin-top: 20px;
     .img-wrap {
+      border-top-left-radius: $borderRadius;
+      border-top-right-radius: $borderRadius;
       height: 500px;
       display: grid;
       justify-content: center;
       align-items: end;
-      background-color: $bgcolor;
+      background-color: $bgColor;
       align-items: center;
       background-color: black;
     }
     a {
-      font-size: calc($textsize - 6);
+      font-size: calc(23 - 6);
       font-family: $fontfamily;
       text-decoration: none;
       color: rgba(var(--f52, 142, 142, 142), 1);
@@ -42,9 +43,9 @@
       line-height: 2rem;
     }
     img {
-      @include marginpad();
-      max-height: $photowidth;
-      width: $photowidth;
+      @include marginAndPad0();
+      max-height: $photoWidth;
+      width: $photoWidth;
       border-radius: $borderRadius;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
@@ -52,13 +53,15 @@
     }
     .caption-content {
       background-color: lavender;
+      border-bottom-left-radius: $borderRadius;
+      border-bottom-right-radius:$borderRadius;
     }
     .date {
-      font-size: $textsize - 7;
+      font-size: $textSize - 7;
       text-align: center !important;
     }
     button {
-      @include marginpad();
+      @include marginAndPad0();
       border-radius: 100%;
       background-color: inherit;
       border: 0;

@@ -2,42 +2,58 @@
   font-family: "Billabong";
   src: url("./Billabong.ttf");
 }
-$titlefont: "billabong", "cursive";
-$borderRadius: 10px;
-$photowidth: 500px;
-$textsize: 23;
-$bgcolor: rgb(38, 38, 38);
+$titleFont: "billabong", "cursive";
+$borderRadius: 20px;
+$photoWidth: 500px;
+$textSize: 23px;
+$bgColor: rgb(38, 38, 38);
+$bgTransparent: transparentize($bgColor, 0.25);
 $fontfamily: Arial, Helvetica, sans-serif;
 
-@mixin marginpad {
+@mixin marginAndPad0 {
   margin: 0;
   padding: 0;
 }
 
-#head{
-  color: lighten($color: lightcoral, $amount: 10) ;
+header {
+  color: lighten($color: lightcoral, $amount: 10);
   position: "sticky";
   top: 0;
-  background-color: rgba(38, 38, 38,0.75);
+  background-color: $bgTransparent;
   padding: 15px;
+}
 
+h2#error {
+  text-align: center;
+  background-color: red;
+  padding: 20px;
+}
+#notYetLoaded {
+  background-color: $bgTransparent;
+  text-align: center;
+  margin-top: 50vh;
+
+  header {
+    background-color: transparent;
+  }
 }
 #loaded {
-  background-color: $bgcolor;
-  #head {
+ 
+  background-color: $bgColor;
+  header {
+    background-color: $bgTransparent;
     font-size: large;
     position: sticky;
     top: 0;
-    background-color: rgba(38, 38, 38, 0.75);
     padding: 13 0;
   }
 }
 h1 {
   margin: 0;
-  font-family: $titlefont;
+  font-family: $titleFont;
   text-transform: capitalize;
   text-align: center;
-letter-spacing: 10px;
+  letter-spacing: 10px;
 }
 h4 {
   font-family: $fontfamily;
@@ -47,11 +63,21 @@ h4 {
 
 body {
   background-color: black;
-  @include marginpad();
+  @include marginAndPad0();
   #root {
-    @include marginpad();
+    @include marginAndPad0();
     font-family: $fontfamily;
   }
 }
+.yellowText {
 
+  color: #ffeb3b;
+  svg{
+    color: #ffeb3b;
+  }
+}
+
+@import "./filter";
+@import "./heart";
 @import "./photo";
+@import "./lightmode"

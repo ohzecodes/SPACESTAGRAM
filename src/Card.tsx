@@ -17,42 +17,29 @@ interface Props {
 
 const Card = (props: Props): JSX.Element => {
   const { id, hdurl, date, explanation, title,addFavorites,rmFavorite } = props;
-  const [like, setlike] = useState(false);
+  const [like, setLike] = useState(false);
   // white heart false
   // red heart true
   const size = [30, 150];
-  const heartclick = (id: string) => {
-    let doc = document.getElementById(id);
-    let sec = 30;
+
+  const heartClick = (id: string) => {
+    let Heart = document.getElementById(id);
+    
 
     if (!like) {
-      addFavorites({...props,date:props.date.toDateString(),addFavorites:undefined,rmFavorite:undefined});
-      let i = size[0];
-      const frameon = () => {
-        if (i === size[1]) {
-          clearInterval(anid);
-        } else {
-          if (doc) doc.style.fontSize = `${i}px`;
-          i += 10;
-        }
-      };
-      let anid = setInterval(frameon, sec);
+    
+      Heart?.classList.remove("heartOff")
+      Heart?.classList.add("heartOn")
+      addFavorites({...props,date:props.date.toDateString(),addFavorites:null,rmFavorite:null});
+  
     } else {
-      rmFavorite({...props,date:props.date.toDateString(),addFavorites:undefined,rmFavorite:undefined});
-     
-      let i = size[1];
-      const frameoff = () => {
-        if (i === size[0]) {
-          clearInterval(anid);
-        } else {
-          i -= 10;
-          if (doc) doc.style.fontSize = `${i}px`;
-        }
-      };
-      let anid = setInterval(frameoff, sec);
+
+      Heart?.classList.remove("heartOn")
+      Heart?.classList.add("heartOff")
+      rmFavorite({...props,date:props.date.toDateString(),addFavorites:null,rmFavorite:null});
     }
 
-    setlike(!like);
+    setLike(!like);
   };
 
   const monthNames = [
@@ -69,8 +56,7 @@ const Card = (props: Props): JSX.Element => {
     "November",
     "December"
   ];
-  const d: string =
-    date.getUTCDate() +
+  const dateAsString: string =date.getUTCDate() +
     " " +
     monthNames[date.getUTCMonth()] +
     " " +
@@ -80,7 +66,7 @@ const Card = (props: Props): JSX.Element => {
     <div
       className="photo"
       id={
-        id + 1 + "-" + title.substring(0, 6).trim().replace(" ", "-") + "-" + d
+        id + 1 + "-" + title.substring(0, 6).trim().replace(" ", "-") + "-" + dateAsString
       }
     >
       <div className="img-wrap">
@@ -88,14 +74,11 @@ const Card = (props: Props): JSX.Element => {
       </div>
       <div className="caption-content">
         <Explain txt={explanation} words={15} />
-        <p className="date">{d}</p>
+        <p className="date">{dateAsString}</p>
         <div style={{ textAlign: "center" }}>
           <button
             onClick={() => {
-             
-             
-              
-              heartclick("btn" + id)}}
+              heartClick("btn" + id)}}
             id={"btn" + id}
             style={{ fontSize: size[0], textAlign: "center" }}
           >
